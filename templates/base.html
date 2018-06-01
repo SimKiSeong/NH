@@ -30,7 +30,15 @@
 
 <div id="menu">
     <li><a href="{% url 'home' %}">Home</a></li>
-    <li><a href="{% url 'bookmark:index' %}">Bookmark</a></li>
+    <li>구매하기&bigtriangledown;
+        <ul>
+            <li><a href="{% url 'photo:index' %}">곡류</a></li>
+            <li><a href="{% url 'photo:index' %}">과일</a></li>
+            <li><a href="{% url 'photo:index' %}">채소</a></li>
+            <li><a href="{% url 'photo:index' %}">사과</a></li>
+            <li><a href="{% url 'photo:index' %}">바나나</a></li>
+        </ul>
+    </li>
     <li><a href="{% url 'blog:index' %}">Blog</a></li>
     <li><a href="{% url 'photo:index' %}">Photo</a></li>
 
