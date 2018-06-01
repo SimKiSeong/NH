@@ -11,8 +11,9 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 @python_2_unicode_compatible
+
 class Album(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
     description = models.CharField('One Line Description', max_length=100, blank=True)
     owner = models.ForeignKey(User, null=True)
 

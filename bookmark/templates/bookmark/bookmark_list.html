@@ -2,14 +2,22 @@
 
 {% block title %}Django Bookmark List{% endblock %}
 
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+
 {% block content %}
 <div id="content">
-    <h1>Bookmark List</h1>
+    <h1>{% firstof user.get_short_name user.get_username %}님이 구독한 목록</h1>
 
     <ul>
-        {% for bookmark in object_list %}
-            <li><a href="{% url 'bookmark:detail' bookmark.id %}">{{ bookmark }}</a></li>
+        {% for SubList in object_list %}
+           	<li>물건 : {{ SubList.title }}</li>
+           	<li>가격 : {{ SubList.price }} </a></li>
+			<h1></h1>
         {% endfor %}
+            
     </ul>
-</div>
+
+  <a href="{% url 'bookmark:add' %}">구독하러 가기</a>
+
 {% endblock %}
