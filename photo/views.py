@@ -19,7 +19,7 @@ class PhotoDV(DetailView):
 #--- Add/Change/Update/Delete for Photo
 class PhotoCreateView(LoginRequiredMixin, CreateView):
     model = Photo
-    fields = ['album', 'title', 'image', 'description']
+    fields = ['album', 'origin', 'image', 'description','cnt','price','Subscription_ratings','purchase_after_sub']
     success_url = reverse_lazy('photo:index')
 
     def form_valid(self, form):
@@ -34,7 +34,7 @@ class PhotoChangeLV(LoginRequiredMixin, ListView):
 
 class PhotoUpdateView(LoginRequiredMixin, UpdateView) :
     model = Photo
-    fields = ['album', 'title', 'image', 'description']
+    fields = ['album', 'origin', 'image', 'description','cnt','price','Subscription_ratings','purchase_after_sub']
     success_url = reverse_lazy('photo:index')
 
 class PhotoDeleteView(LoginRequiredMixin, DeleteView) :
@@ -107,4 +107,3 @@ class AlbumPhotoUV(LoginRequiredMixin, UpdateView):
             return redirect(self.object.get_absolute_url())
         else:
             return self.render_to_response(self.get_context_data(form=form))
-
