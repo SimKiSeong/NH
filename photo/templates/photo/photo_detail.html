@@ -8,12 +8,8 @@
 {% block content %}
 <div id="content">
 
-<<<<<<< HEAD
-    <h2>{{ object.title }}</h2>
-=======
     <h2>{{ object.origin }}</h2>
->>>>>>> origin/choi
-    
+
     <table class="photo-detail">
     <tr>
     <td>
@@ -21,16 +17,24 @@
         <img style="max-width:100%" src="{{ object.image.url }}" />
         </a>
     </td>
-    
+
     <td>
     <ul>
+        <li>원산지</li>
+        <p><a href="{% url 'photo:album_detail' object.album.id %}">{{ object.album.name }}</a></p>
+        <li>가격</li>
+        <p>{{object}}원</p>
+        <li>수량</li>
+        <p>{{object.cnt}}개</p>
+        <li>구독 점수 </li>
+        <p>{{object.Subscription_ratings}}점</p>
+        <li>구독 후 재구매 횟수</li>
+        <p>{{ object.purchase_after_sub}}번</p>
         <li>Photo Description</li>
         {% if object.description %}<p>{{ object.description|linebreaks }}</p>
         {% else %}<p>(blank)</p>{% endif %}
-        <li>Date Uploaded</li>
-        <p>{{ object.upload_date }}</p>
-        <li>Album Name</li>
-        <p><a href="{% url 'photo:album_detail' object.album.id %}">{{ object.album.name }}</a></p>
+
+
     </ul>
     </td>
     </tr></table>

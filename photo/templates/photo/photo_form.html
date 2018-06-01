@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 {% extends "base.html" %}
-=======
-    {% extends "base.html" %}
->>>>>>> origin/choi
 
 {% block title %}photo_form.html{% endblock %}
 
@@ -12,11 +9,9 @@
 {% block content %}
 <div id="content">
 
-<<<<<<< HEAD
-    <h1>Photo Create/Update - {{user}}</h1>
-=======
+
     <h1>{{user}}님의 농수산물 등록하기</h1>
->>>>>>> origin/choi
+
 
     {% if form.is_multipart %}
     <form enctype="multipart/form-data" method="post" action=".">
@@ -29,30 +24,12 @@
     <p class="errornote">Wrong! Please correct the error(s) below.</p>
     {% endif %}
 
-<<<<<<< HEAD
-    <p>This is a creation or update form for your photo.</p>
-=======
-    <p>이곳은 농수산물을 등록하는 곳 입니다.</p>
->>>>>>> origin/choi
 
+    <p>이곳은 농수산물을 등록하는 곳 입니다.</p>
     <fieldset class="aligned">
 
         <div class="form-row">
-<<<<<<< HEAD
-            {{ form.image.label_tag }} {{ form.image }}
-        </div>
 
-        <div class="form-row">
-            {{ form.album.label_tag }} {{ form.album }}
-            <button type="button"><a href="{% url 'photo:album_add' %}">Add Album</a></button>
-        </div>
-    
-        <div class="form-row">
-            {{ form.title.label_tag }} {{ form.title }}
-        </div>
-
-        <div class="form-row">
-=======
             {{ '품목 : ' }} {{ form.album }}
             <button type="button"><a href="{% url 'photo:album_add' %}">Add Album</a></button>
         </div>
@@ -87,7 +64,6 @@
 
 
         <div class="form-row">
->>>>>>> origin/choi
             {{ form.description.label_tag }} {{ form.description }}
         </div>
 
