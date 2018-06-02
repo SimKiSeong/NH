@@ -8,20 +8,28 @@ from photo.models import *
 
 @python_2_unicode_compatible
 class Bookmark(models.Model):
-    title = models.ForeignKey(Album)
+    title = models.ForeignKey(Album, blank=True,null=True)
+    amount = models.CharField(max_length=100, blank=True, null=True)
     price = models.CharField(max_length=100, blank=True, null=True)
     owner = models.ForeignKey(User, null=True)
 
+    class Meta:
+        ordering = ['title']
+
     def __str__(self):
-        return self.title
+        return str(self.title)
 
 # 그룹을 만들건데 이 그룹이 사용자로 되는거지
 class SubGroup(models.Model):
     title = models.CharField(max_length=100, blank=True, null=True)
     price = models.CharField(max_length=100, blank=True, null=True)
- 	
+
+    class Meta:
+        ordering = ['title']
+
     def __str__(self):
-        return self.title 
+        return str(self.title)
+
 
 # 구독한 목록 객채
 class SubList(models.Model):
@@ -29,6 +37,9 @@ class SubList(models.Model):
     price = models.CharField(max_length=100, blank=True, null=True)
     owner = models.ForeignKey(SubGroup, null=True)
 
+    class Meta:
+        ordering = ['title']
+
     def __str__(self):
-        return self.title 
+        return str(self.title)
 

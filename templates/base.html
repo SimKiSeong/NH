@@ -13,7 +13,11 @@
 <body>
 
 <div id="header">
-    <h2 class="maintitle">Easy&amp;Fast Django Web Programming</h2>
+  <a href= "http://127.0.0.1:8000/">
+    <img src="{% static 'img/bottom.jpg' %}" style="height:60px;"/>
+  </a>
+    <h1 class="maintitle" style="align:center;">
+      Easy&amp;Fast Django Web Programming</h1>
     {% if user.is_active %}
     <h4 class="welcome">Welcome,
                 <strong>{% firstof user.get_short_name user.get_username %}</strong> /
@@ -29,10 +33,16 @@
 </div>
 
 <div id="menu">
-    <li><a href="{% url 'home' %}">Home</a></li>
-    <li><a href="{% url 'bookmark:index' %}">Bookmark</a></li>
-    <li><a href="{% url 'blog:index' %}">Blog</a></li>
-    <li><a href="{% url 'photo:index' %}">Photo</a></li>
+
+    <li>구매하기&bigtriangledown;
+        <ul>
+            <li><a href="{% url 'photo:index' %}">쌀/잡곡</a></li>
+            <li><a href="{% url 'photo:index2' %}">과일/견과</a></li>
+            <li><a href="{% url 'photo:index3' %}">채소/버섯</a></li>
+            <li><a href="{% url 'photo:index4' %}">guitar</a></li>
+        </ul>
+    </li>
+
 
     <li>Add&bigtriangledown;
         <ul>
@@ -50,10 +60,8 @@
             <li><a href="{% url 'photo:photo_change' %}">Photo</a></li>
         </ul>
     </li>
-
-    <li><a href="{% url 'blog:post_archive' %}">Archive</a></li>
-    <li><a href="{% url 'blog:search' %}">Search</a></li>
-    <li><a href="{% url 'admin:index' %}">Admin</a></li>
+        <li><a href="{% url 'account:mypage' %}">mypage</a></li>
+        <li><a href="{% url 'admin:index' %}">Admin</a></li>
 </div>
 
 {% block content %}{% endblock %}

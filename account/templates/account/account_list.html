@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}account_list.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "photo/photo.css" %}{% endblock %}
+
+
+
+{% block content %}
+
+<div id="content">
+    <h1>{{user}}님의 개인정보 입니다.</h1>
+
+
+    {% for item in object_list %}
+    {% if item.owner == "tpcks0124":%}
+    <div class="clear_float">
+   <b><i>계좌 정보 : {{ item.description }}</i></b>
+
+
+</div>
+
+    {% endif %}
+   {% endfor %}
+    </div>
+{% endblock %}

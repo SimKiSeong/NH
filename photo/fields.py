@@ -13,7 +13,7 @@ class ThumbnailImageFieldFile(ImageFieldFile):
     def _get_thumb_path(self):
         return _add_thumb(self.path)
     thumb_path = property(_get_thumb_path)
-    
+
     def _get_thumb_url(self):
         return _add_thumb(self.url)
     thumb_url = property(_get_thumb_url)
@@ -24,9 +24,10 @@ class ThumbnailImageFieldFile(ImageFieldFile):
 
         size = (128, 128)
         img.thumbnail(size, Image.ANTIALIAS)
-        background = Image.new('RGBA', size, (255, 255, 255, 0))
+        background = Image.new('RGB', size, (255, 255, 255, 0))
         background.paste(
             img, ( int((size[0] - img.size[0]) / 2), int((size[1] - img.size[1]) / 2) ) )
+
         background.save(self.thumb_path, 'JPEG')
 
     def delete(self, save=True):

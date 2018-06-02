@@ -4,7 +4,7 @@ from bookmark.models import *
 # Register your models here.
 
 class BookmarkAdmin(admin.ModelAdmin):
-    list_display = ('title', 'price','owner')
+    list_display = ('title','amount', 'price','owner')
 
 class SubGroupAdmin(admin.ModelAdmin):
     list_display = ('title','price')

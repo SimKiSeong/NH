@@ -5,7 +5,7 @@ body {
 
 /* PAGE STRUCTURE */
 div#header {
-    position: absolute;
+    position: relative;
     top: 0px;
     left: 0px;
     height: 30px;
@@ -15,27 +15,27 @@ div#header {
 }
 
 div#menu {
-    position: absolute;
-    top: 30px;
+    position: relative;
+    top:0px;
     left: 0px;
-    height: 20px;
+    height: 50px;
     width: 100%;
     display: table;
     table-layout: fixed;
     border-spacing: 40px 0px;
-    background: #ffa;
+    background: beige;
     font-size: 8px;
 }
 
 div#content {
-    position: absolute;
-    top: 70px;
+    position: relative;
+    top: 10px;
     left: 50px;
     right: 50px;
 }
 
 div#footer {
-    position: absolute;
+    position: relative;
     bottom: 20px;
     left: 50px;
     right: 50px;
@@ -84,7 +84,7 @@ div#menu > li {
 /* pulldown menu */
 div#menu li  ul {
     display:none;
-    position:absolute;
+    position:relative;
     margin: 0;
     padding:10px 10px 5px 10px;
     list-style:none;
@@ -125,4 +125,3 @@ td, th {
 table.change-list, table.change-list th, table.change-list td {
     border: 1px solid #ccc;
 }
-

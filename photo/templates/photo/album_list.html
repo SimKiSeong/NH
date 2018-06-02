@@ -15,7 +15,7 @@
         &emsp;<b><i>{{ item.description }}</i></b>
     </div>
 
-    <hr/>
+    <hr align=""width=""size="10">
 
     <div class="album-list">
         {% for photo in item.photo_set.all|slice:":5" %}
@@ -23,6 +23,7 @@
             <a href="{{ photo.get_absolute_url }}">
             <img class="thumbnail" src="{{ photo.image.thumb_url }}" />
             </a>
+            <p> ●{{ photo.Subscription_ratings }}  ●{{ photo.purchase_after_sub }} </>
         </div>
         {% endfor %}
     </div>

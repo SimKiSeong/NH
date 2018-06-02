@@ -32,5 +32,5 @@ urlpatterns = [
     url(r'^bookmark/', include('bookmark.urls', namespace='bookmark')),
     url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^photo/', include('photo.urls', namespace='photo')),
-
+    url(r'^account/', include('account.urls',namespace='account')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

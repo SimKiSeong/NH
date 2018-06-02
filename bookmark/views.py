@@ -9,8 +9,11 @@ from mysite.views import LoginRequiredMixin
 
 # Create your views here.
 
-class BookmarkLV(ListView):
-   model = Bookmark
+class BookmarkLV(LoginRequiredMixin, ListView):
+    template_name = 'bookmark/bookmark_list.html'
+    def get_queryset(self):
+        return Bookmark.objects.filter(owner=self.request.user)
+
 
 class BookmarkDV(DetailView):
    model = Bookmark

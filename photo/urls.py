@@ -21,8 +21,11 @@ from photo.views import *
 urlpatterns = [
 
     # Example: /
-    url(r'^$', AlbumLV.as_view(), name='index'),
 
+    url(r'^album0/$', AlbumLV.as_view(), name='index',),
+    url(r'^album1/$', AlbumLV2.as_view(), name='index2',),
+    url(r'^album2/$', AlbumLV3.as_view(), name='index3',),
+    url(r'^album3/$', AlbumLV4.as_view(), name='index4',),
     # Example: /album/, same as /
     url(r'^album/$', AlbumLV.as_view(), name='album_list'),
 
@@ -72,4 +75,3 @@ urlpatterns = [
         PhotoDeleteView.as_view(), name="photo_delete",
     ),
 ]
-

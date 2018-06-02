@@ -21,9 +21,6 @@ urlpatterns = [
     url(r'^$', BookmarkLV.as_view(), name='index'),
     url(r'^(?P<pk>\d+)/$', BookmarkDV.as_view(), name='detail'),
 
-    # Example: /album/, same as /
-    url(r'^/$', SubListLV.as_view(), name='sublist_list'),
-
     # Example: /add/
     url(r'^add/$',
         BookmarkCreateView.as_view(), name="add",

@@ -11,7 +11,7 @@ class AlbumAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
 
 class PhotoAdmin(admin.ModelAdmin):
-    list_display = ('title', 'upload_date')
+    list_display = ('origin', 'upload_date')
 
-admin.site.register(Album, AlbumAdmin)    
+admin.site.register(Album, AlbumAdmin)
 admin.site.register(Photo, PhotoAdmin)

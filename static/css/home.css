@@ -1,6 +1,6 @@
 div#content_home {
-    position: absolute;
-    top: 80px;
+    position: relative;
+    top: 10px;
     left: 110px;
     right: 110px;
 }
